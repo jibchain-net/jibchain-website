@@ -1,10 +1,10 @@
-import { ConnectButton } from '@rainbow-me/rainbowkit';
 import type { NextPage } from 'next';
+import Hero from '../components/Hero';
 
 
 const Home: NextPage = () => {
   return (
-    <h1>JibCHain</h1>
+    <Hero />
   );
 };
 
