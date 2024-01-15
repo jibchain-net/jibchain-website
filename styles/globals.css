@@ -8,7 +8,6 @@ body{
 }
 
 .hero-bg{
-  
   background: 
     linear-gradient(90deg,
     color(display-p3 0.0275 0.0392 0.0588) 35.07%,
@@ -17,4 +16,8 @@ body{
     color(display-p3 0.0275 0.0392 0.0588 / 0.00) 50%,
     color(display-p3 0.0275 0.0392 0.0588) 100%),
     url('/img/hero-bg.jpg') no-repeat center;
+}
+
+.validator-bg{
+  background: url('/img/Rocket.jpg') no-repeat center;
 }

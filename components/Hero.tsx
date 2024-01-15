@@ -1,7 +1,5 @@
 import { ChevronRightIcon } from '@heroicons/react/20/solid'
 import { ConnectButton } from '@rainbow-me/rainbowkit'
-import heroBG from '../public/img/hero-bg.jpg'
-import Image from 'next/image'
 
 export default function Hero() {
   return (
