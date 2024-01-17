@@ -29,6 +29,7 @@ module.exports = {
         300: '#FFA520',
         400: '#E58900',
       },
+      'secondary': '#213566',
     },
     extend: {},
   },
