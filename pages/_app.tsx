@@ -21,7 +21,7 @@ const { chains, publicClient, webSocketPublicClient } = configureChains(
 
 const { connectors } = getDefaultWallets({
   appName: 'JibChain',
-  projectId: 'YOUR_PROJECT_ID',
+  projectId: process.env.WALLET_CONNECT_ID ?? 'APPID',
   chains,
 });
 

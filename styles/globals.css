@@ -2,9 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 body{
   background-color: #070A0F;
-  ;
 }
 
 /* .hero-bg{
