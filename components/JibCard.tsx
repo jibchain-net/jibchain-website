@@ -1,14 +1,17 @@
-// JibCard.js
+import React, { ReactNode } from 'react';
 
-const JibCard = ({ children }) => {
-    return (
-      <div className="jib-card">
-        <div className="px-4 py-5 sm:p-6">
-          {children /* Content goes here */}
-        </div>
+interface JibCardProps {
+  children: ReactNode;
+}
+
+const JibCard: React.FC<JibCardProps> = ({ children }) => {
+  return (
+    <div className="jib-card">
+      <div className="px-4 py-5 sm:p-6">
+        {children /* Content goes here */}
       </div>
-    );
-  };
-  
-  export default JibCard;
-  
+    </div>
+  );
+};
+
+export default JibCard;

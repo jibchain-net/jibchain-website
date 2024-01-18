@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@ethersproject/bignumber':
+    specifier: ^5.7.0
+    version: 5.7.0
   '@ethersproject/units':
     specifier: ^5.7.0
     version: 5.7.0
