@@ -1,6 +1,3 @@
-import { useState } from 'react'
-import { RadioGroup } from '@headlessui/react'
-import { CheckIcon } from '@heroicons/react/20/solid'
 import JibCard from './JibCard'
 import { shortenEthAddress } from '../utils/helpers'
 import Image from 'next/image'

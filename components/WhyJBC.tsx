@@ -1,52 +1,28 @@
-import { useState } from 'react'
-import { RadioGroup } from '@headlessui/react'
-import { CheckIcon } from '@heroicons/react/20/solid'
+import Image from 'next/image'
 
-const frequencies = [
-  { value: 'monthly', label: 'Monthly', priceSuffix: '/month' },
-  { value: 'annually', label: 'Annually', priceSuffix: '/year' },
-]
+import JibCard from './JibCard'
+
+import iconBlend from '../public/img/icon/blend.png'
+import iconFlashCircle from '../public/img/icon/flash-circle.png'
+import iconShieldTick from '../public/img/icon/shield-tick.png'
+
 const tiers = [
   {
-    name: 'Freelancer',
-    id: 'tier-freelancer',
-    href: '#',
-    price: { monthly: '$15', annually: '$144' },
-    description: 'The essentials to provide your best work for clients.',
-    features: ['5 products', 'Up to 1,000 subscribers', 'Basic analytics', '48-hour support response time'],
-    mostPopular: false,
+    icon: iconBlend,
+    topic: 'easy',
+    description: 'blockchain innovation JBC create a EVM Blockchain base on Erigon for easy interoperability.',
   },
   {
-    name: 'Startup',
-    id: 'tier-startup',
-    href: '#',
-    price: { monthly: '$30', annually: '$288' },
-    description: 'A plan that scales with your rapidly growing business.',
-    features: [
-      '25 products',
-      'Up to 10,000 subscribers',
-      'Advanced analytics',
-      '24-hour support response time',
-      'Marketing automations',
-    ],
-    mostPopular: true,
+    icon: iconFlashCircle,
+    topic: 'Scalable',
+    description: 'Build dApps that can grow and evolve without hitting performance walls.',
   },
   {
-    name: 'Enterprise',
-    id: 'tier-enterprise',
-    href: '#',
-    price: { monthly: '$60', annually: '$576' },
-    description: 'Dedicated support and infrastructure for your company.',
-    features: [
-      'Unlimited products',
-      'Unlimited subscribers',
-      'Advanced analytics',
-      '1-hour, dedicated support response time',
-      'Marketing automations',
-      'Custom reporting tools',
-    ],
-    mostPopular: false,
+    icon: iconShieldTick,
+    topic: 'Optimized',
+    description: 'Build dApps that fly with our ultra-optimized infrastructure.',
   },
+  
 ]
 
 function classNames(...classes: string[]) {
@@ -54,73 +30,40 @@ function classNames(...classes: string[]) {
 }
 
 export default function WhyJBC() {
-  const [frequency, setFrequency] = useState(frequencies[0])
-
+  
   return (
     <div className="py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
-          
           <p className="mt-2 text-4xl font-bold tracking-tight text-primary-300 sm:text-5xl">
             Why JBC?
           </p>
         </div>
-        <p className="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-gray-400">
-        JBC enables a world of Web3 and other new business models
+        <p className="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-secondary-100 pb-12">
+          JBC enables a world of Web3 and other new business models
         </p>
 
-        <div className="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-          {tiers.map((tier) => (
-            <div
-              key={tier.id}
-              className={classNames(
-                tier.mostPopular ? 'ring-2 ring-indigo-600' : 'ring-1 ring-gray-200',
-                'rounded-3xl p-8 xl:p-10'
-              )}
-            >
-              <div className="flex items-center justify-between gap-x-4">
-                <h3
-                  id={tier.id}
-                  className={classNames(
-                    tier.mostPopular ? 'text-indigo-600' : 'text-gray-900',
-                    'text-lg font-semibold leading-8'
-                  )}
-                >
-                  {tier.name}
-                </h3>
-                {tier.mostPopular ? (
-                  <p className="rounded-full bg-indigo-600/10 px-2.5 py-1 text-xs font-semibold leading-5 text-indigo-600">
-                    Most popular
-                  </p>
-                ) : null}
-              </div>
-              <p className="mt-4 text-sm leading-6 text-gray-600">{tier.description}</p>
-              <p className="mt-6 flex items-baseline gap-x-1">
-                <span className="text-4xl font-bold tracking-tight text-gray-900">{tier.price[frequency.value]}</span>
-                <span className="text-sm font-semibold leading-6 text-gray-600">{frequency.priceSuffix}</span>
-              </p>
-              <a
-                href={tier.href}
-                aria-describedby={tier.id}
-                className={classNames(
-                  tier.mostPopular
-                    ? 'bg-indigo-600 text-white shadow-sm hover:bg-indigo-500'
-                    : 'text-indigo-600 ring-1 ring-inset ring-indigo-200 hover:ring-indigo-300',
-                  'mt-6 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'
-                )}
-              >
-                Buy plan
-              </a>
-              <ul role="list" className="mt-8 space-y-3 text-sm leading-6 text-gray-600 xl:mt-10">
-                {tier.features.map((feature) => (
-                  <li key={feature} className="flex gap-x-3">
-                    <CheckIcon className="h-6 w-5 flex-none text-indigo-600" aria-hidden="true" />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+        <div className="mx-auto max-w-6xl">
+          <div className="grid grid-cols-3 gap-8">
+            {tiers.map((tier) => (
+              <JibCard>
+                <div className="grid grid-cols-1 justify-items-start">
+                  <span className='pl-3'>
+                  <Image
+                    src={tier.icon}
+                    width={64}
+                    height={64}
+                    alt={tier.topic}
+                  />
+                  </span>
+                  <div className='text-lg font-semi-bold p-3'>
+                    <span className='text-primary-500'>{tier.topic}</span>
+                    <span className='text-secondary-100'>&nbsp;{tier.description}</span>
+                  </div>
+                </div>
+              </JibCard>
+            ))}
+          </div>
         </div>
       </div>
     </div>
