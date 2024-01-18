@@ -44,37 +44,34 @@ export default function Navbar() {
               <div className="hidden sm:ml-6 sm:flex sm:space-x-8 pr-2">
                   <a
                     href="https://bridge.jbcha.in/"
+                    target='_new'
                     className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-300 hover:border-primary-200 hover:text-primary-400"
                   >
                     Bridge
                   </a>
                   <a
-                    href="#"
-                    className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-300 hover:border-primary-200 hover:text-primary-400"
-                  >
-                    Technology
-                  </a>
-                  <a
-                    href="#"
+                    href="#validator"
                     className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-300 hover:border-primary-200 hover:text-primary-400"
                   >
                     Validators
                   </a>
                   <a
-                    href="#"
+                    href="#ecosystem"
                     className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-300 hover:border-primary-200 hover:text-primary-400"
                   >
                     Ecosystem
                   </a>
                   <a
-                    href="#"
+                    href="https://exp-l1.jibchain.net/"
+                    target='_new'
                     className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-300 hover:border-primary-200 hover:text-primary-400"
                   >
                     Block Explorer
 
                   </a>
                   <a
-                    href="#"
+                    href="https://dora.jibchain.net/"
+                    target='_new'
                     className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-300 hover:border-primary-200 hover:text-primary-400"
                   >
                     Beacon Explorer

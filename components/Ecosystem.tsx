@@ -53,7 +53,7 @@ const tiers = [
 export default function Ecosystem() {
   
   return (
-    <div className="py-24 sm:py-32">
+    <div className="py-24 sm:py-32" id="ecosystem">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <p className="mt-2 text-4xl font-bold tracking-tight text-primary-300 sm:text-5xl">

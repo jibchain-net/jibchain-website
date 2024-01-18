@@ -35,6 +35,9 @@ dependencies:
   react-dom:
     specifier: ^18.2.0
     version: 18.2.0(react@18.2.0)
+  react-router-hash-link:
+    specifier: ^2.4.3
+    version: 2.4.3(react-router-dom@6.21.2)(react@18.2.0)
   tailwindcss:
     specifier: ^3.4.1
     version: 3.4.1
@@ -661,6 +664,11 @@ packages:
       wagmi: 1.4.13(@types/react@18.2.47)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.3)(viem@1.21.4)
     transitivePeerDependencies:
       - '@types/react'
+    dev: false
+
+  /@remix-run/router@1.14.2:
+    resolution: {integrity: sha512-ACXpdMM9hmKZww21yEqWwiLws/UPLhNKvimN8RrYSqPSvB3ov7sLvAcfvaxePeLvccTQKGdkDIhLYApZVDFuKg==}
+    engines: {node: '>=14.0.0'}
     dev: false
 
   /@rushstack/eslint-patch@1.6.1:
@@ -4240,7 +4248,6 @@ packages:
       loose-envify: 1.4.0
       object-assign: 4.1.1
       react-is: 16.13.1
-    dev: true
 
   /proxy-compare@2.5.1:
     resolution: {integrity: sha512-oyfc0Tx87Cpwva5ZXezSp5V9vht1c7dZBhvuV/y3ctkgMVUmiAGDVeeB0dKhGSyT0v1ZTEQYpe/RXlBVBNuCLA==}
@@ -4318,7 +4325,6 @@ packages:
 
   /react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
-    dev: true
 
   /react-remove-scroll-bar@2.3.4(@types/react@18.2.47)(react@18.2.0):
     resolution: {integrity: sha512-63C4YQBUt0m6ALadE9XV56hV8BgJWDmmTPY758iIJjfQKt2nYwoUrPk0LXRXcB/yIj82T1/Ixfdpdk68LwIB0A==}
@@ -4353,6 +4359,40 @@ packages:
       tslib: 2.6.2
       use-callback-ref: 1.3.1(@types/react@18.2.47)(react@18.2.0)
       use-sidecar: 1.1.2(@types/react@18.2.47)(react@18.2.0)
+    dev: false
+
+  /react-router-dom@6.21.2(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-tE13UukgUOh2/sqYr6jPzZTzmzc70aGRP4pAjG2if0IP3aUT+sBtAKUJh0qMh0zylJHGLmzS+XWVaON4UklHeg==}
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      react: '>=16.8'
+      react-dom: '>=16.8'
+    dependencies:
+      '@remix-run/router': 1.14.2
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      react-router: 6.21.2(react@18.2.0)
+    dev: false
+
+  /react-router-hash-link@2.4.3(react-router-dom@6.21.2)(react@18.2.0):
+    resolution: {integrity: sha512-NU7GWc265m92xh/aYD79Vr1W+zAIXDWp3L2YZOYP4rCqPnJ6LI6vh3+rKgkidtYijozHclaEQTAHaAaMWPVI4A==}
+    peerDependencies:
+      react: '>=15'
+      react-router-dom: '>=4'
+    dependencies:
+      prop-types: 15.8.1
+      react: 18.2.0
+      react-router-dom: 6.21.2(react-dom@18.2.0)(react@18.2.0)
+    dev: false
+
+  /react-router@6.21.2(react@18.2.0):
+    resolution: {integrity: sha512-jJcgiwDsnaHIeC+IN7atO0XiSRCrOsQAHHbChtJxmgqG2IaYQXSnhqGb5vk2CU/wBQA12Zt+TkbuJjIn65gzbA==}
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      react: '>=16.8'
+    dependencies:
+      '@remix-run/router': 1.14.2
+      react: 18.2.0
     dev: false
 
   /react-style-singleton@2.2.1(@types/react@18.2.47)(react@18.2.0):
