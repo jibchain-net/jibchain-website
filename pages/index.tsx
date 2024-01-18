@@ -5,6 +5,7 @@ import Validator from '../components/Validatior';
 import Footer from '../components/Footer';
 import WhyJBC from '../components/WhyJBC';
 import Multichain from '../components/Multichain';
+import BuildOnJBC from '../components/BuildOnJBC';
 
 
 const Home: NextPage = () => {
@@ -15,6 +16,7 @@ const Home: NextPage = () => {
       <Validator />
       <WhyJBC />
       <Multichain />
+      <BuildOnJBC />
       <Footer />
       
     </>

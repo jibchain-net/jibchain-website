@@ -23,7 +23,7 @@ export default function Hero() {
               <span className="rounded-full bg-primary-500/10 px-3 py-1 text-sm font-semibold leading-6 text-primary-400 ring-1 ring-inset ring-primary-500/20">
                 What's new
               </span>
-              <span className="inline-flex items-center space-x-2 text-sm font-medium leading-6 text-gray-300">
+              <span className="inline-flex items-center space-x-2 text-sm font-medium leading-6 text-secondary-100">
                 <span>Just shipped v1.0</span>
                 <ChevronRightIcon className="h-5 w-5 text-gray-500" aria-hidden="true" />
               </span>
@@ -32,7 +32,7 @@ export default function Hero() {
           <h1 className="mt-10 text-4xl font-bold tracking-tight text-white sm:text-6xl">
           The <span className='text-primary-300'>JBC</span> Community Powered, Developer Focused
           </h1>
-          <p className="mt-6 text-lg leading-8 text-gray-300">
+          <p className="mt-6 text-lg leading-8 text-secondary-100">
           JIB Chain, an EVM-based platform, is powered by a community of 
           developers and secured by at-home stakers globally. It offers familiar 
           tooling and is soon introducing trustless bridges to major blockchains, 

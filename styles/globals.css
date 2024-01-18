@@ -28,6 +28,10 @@ body{
   background: url('/img/Rocket.jpg') no-repeat center;
 }
 
+/* .build-on-JBC-bg{
+  background: url('/img/build-on-jbc.png') no-repeat center;
+} */
+
 .jib-card{
   border-radius: 16px;
   border: 1px solid var(--Gradient-Frame, rgba(44, 86, 151, 0.00));
