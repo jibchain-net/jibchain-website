@@ -22,7 +22,7 @@ const JibButton: FC<JibButtonProps> = ({ text, size = 'md' }) => {
   return (
     <button
       type="button"
-      className={`rounded-full bg-primary-300 ${buttonSize} font-semibold text-white shadow-sm hover:bg-primary-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-300`}
+      className={`rounded-full bg-primary-500 ${buttonSize} font-semibold text-black shadow-sm hover:bg-primary-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-300`}
     >
       {text}
     </button>

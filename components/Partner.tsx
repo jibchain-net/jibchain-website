@@ -1,7 +1,5 @@
 import Image from 'next/image'
 
-import JibCard from './JibCard'
-
 import iconTokennine from '../public/img/icon/partner/tokennine.png'
 import iconJib from '../public/img/icon/partner/jib.png'
 import iconThaichain from '../public/img/icon/partner/thaichain.png'

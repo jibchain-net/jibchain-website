@@ -8,6 +8,7 @@ import Multichain from '../components/Multichain';
 import BuildOnJBC from '../components/BuildOnJBC';
 import Ecosystem from '../components/Ecosystem';
 import Partner from '../components/Partner';
+import CTA from '../components/CTA';
 
 
 const Home: NextPage = () => {
@@ -21,6 +22,7 @@ const Home: NextPage = () => {
       <BuildOnJBC />
       <Ecosystem />
       <Partner />
+      <CTA />
       <Footer />
       
       

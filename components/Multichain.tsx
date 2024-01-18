@@ -61,10 +61,10 @@ export default function Multichain() {
         JBC Token contract address across various chains.
         </p>
         <div className="mx-auto">
-          <div className="grid grid-cols-5 justify-center gap-4">
+          <div className="grid grid-cols-5 gap-4">
             {tokens.map((token) => (
               <JibCard key={token.chain}>
-                <div className="grid grid-cols-1 justify-items-center justify-center">
+                <div className="grid grid-cols-1 justify-items-center">
                   <Image
                     src={token.img}
                     width={48}
@@ -75,7 +75,6 @@ export default function Multichain() {
                     {token.chain}
                   </div>
                   <span className="inline-flex bg-secondary-200 items-center gap-x-1.5 rounded-md px-2 py-1 text-xs font-medium text-secondary-100 ">
-                    
                     {shortenEthAddress(token.address)}
                     <Link href={token.href}>
                       <Image
