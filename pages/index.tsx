@@ -7,6 +7,7 @@ import WhyJBC from '../components/WhyJBC';
 import Multichain from '../components/Multichain';
 import BuildOnJBC from '../components/BuildOnJBC';
 import Ecosystem from '../components/Ecosystem';
+import Partner from '../components/Partner';
 
 
 const Home: NextPage = () => {
@@ -19,6 +20,7 @@ const Home: NextPage = () => {
       <Multichain />
       <BuildOnJBC />
       <Ecosystem />
+      <Partner />
       <Footer />
       
       
