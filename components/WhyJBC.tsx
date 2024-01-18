@@ -46,7 +46,7 @@ export default function WhyJBC() {
         <div className="mx-auto max-w-6xl">
           <div className="grid grid-cols-3 gap-8">
             {tiers.map((tier) => (
-              <JibCard>
+              <JibCard key={tier.topic}>
                 <div className="grid grid-cols-1 justify-items-start">
                   <span className='pl-3'>
                   <Image

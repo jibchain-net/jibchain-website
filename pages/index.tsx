@@ -6,6 +6,7 @@ import Footer from '../components/Footer';
 import WhyJBC from '../components/WhyJBC';
 import Multichain from '../components/Multichain';
 import BuildOnJBC from '../components/BuildOnJBC';
+import Ecosystem from '../components/Ecosystem';
 
 
 const Home: NextPage = () => {
@@ -17,7 +18,9 @@ const Home: NextPage = () => {
       <WhyJBC />
       <Multichain />
       <BuildOnJBC />
+      <Ecosystem />
       <Footer />
+      
       
     </>
   );

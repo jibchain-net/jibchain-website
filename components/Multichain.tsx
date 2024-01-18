@@ -2,7 +2,8 @@ import JibCard from './JibCard'
 import { shortenEthAddress } from '../utils/helpers'
 import Image from 'next/image'
 import Link from 'next/link'
-
+import iconLink from '../public/img/icon/lucide_external-link.png'
+import iconCopy from '../public/img/icon/document-copy.png'
 const tokens = [
   {
     chain: 'Optimism',
@@ -59,33 +60,44 @@ export default function Multichain() {
         <p className="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-gray-400 pb-12">
         JBC Token contract address across various chains.
         </p>
-
-        <div className="grid grid-cols-5 place-content-evenly gap-4 ">
-          {tokens.map((token) => (
-            <JibCard>
-              <div className="grid grid-cols-1 justify-items-center justify-center">
-                <Image
-                  src={token.img}
-                  width={48}
-                  height={48}
-                  alt={token.chain}
-                />
-                <div className='text-gray-200 text-lg font-semi-bold text-center p-3'>
-                  {token.chain}
+        <div className="mx-auto">
+          <div className="grid grid-cols-5 justify-center gap-4">
+            {tokens.map((token) => (
+              <JibCard key={token.chain}>
+                <div className="grid grid-cols-1 justify-items-center justify-center">
+                  <Image
+                    src={token.img}
+                    width={48}
+                    height={48}
+                    alt={token.chain}
+                  />
+                  <div className='text-gray-200 text-lg font-semi-bold text-center p-3'>
+                    {token.chain}
+                  </div>
+                  <span className="inline-flex bg-secondary-200 items-center gap-x-1.5 rounded-md px-2 py-1 text-xs font-medium text-secondary-100 ">
+                    
+                    {shortenEthAddress(token.address)}
+                    <Link href={token.href}>
+                      <Image
+                        src={iconCopy}
+                        width={12}
+                        height={12}
+                        alt='Copy'
+                      />
+                    </Link>
+                    <Link href={token.href}>
+                      <Image
+                        src={iconLink}
+                        width={12}
+                        height={12}
+                        alt='Link'
+                      />
+                    </Link>
+                  </span>
                 </div>
-                <span className="inline-flex bg-secondary items-center gap-x-1.5 rounded-md px-2 py-1 text-xs font-medium text-gray-300 ">
-                  <svg className="h-1.5 w-1.5 fill-primary-400" viewBox="0 0 6 6" aria-hidden="true">
-                    <circle cx={3} cy={3} r={3} />
-                  </svg>
-                  <Link href={token.href}>
-                  {shortenEthAddress(token.address)}
-                  </Link>
-                  
-                </span>
-              </div>
-
-            </JibCard>
-          ))}
+              </JibCard>
+            ))}
+          </div>
         </div>
       </div>
     </div>
