@@ -10,6 +10,7 @@ import {
 import { publicProvider } from 'wagmi/providers/public';
 import Head from 'next/head';
 import Navbar from '../components/Navbar';
+import coverImage from '../public/img/og.png'
 
 const { chains, publicClient, webSocketPublicClient } = configureChains(
   [
@@ -46,6 +47,16 @@ function MyApp({ Component, pageProps }: AppProps) {
       >
       <Head>
         <title>The JBC Community Powered, Developer Focused</title>
+        <meta property="og:title" content="The JBC Community Powered, Developer Focused" />
+        <meta property="og:description" content="JIB Chain, an EVM-based platform, is powered by a community of developers and secured by at-home stakers globally. It offers familiar tooling and is soon introducing trustless bridges to major blockchains, ensuring a seamless and secure experience." />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content={coverImage.src} />
+        
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="The JBC Community Powered, Developer Focused" />
+        <meta name="twitter:description" content="JIB Chain, an EVM-based platform, is powered by a community of developers and secured by at-home stakers globally. It offers familiar tooling and is soon introducing trustless bridges to major blockchains, ensuring a seamless and secure experience." />
+        <meta name="twitter:image" content={coverImage.src} />
+
       </Head>
         <Navbar />
         <Component {...pageProps} />
