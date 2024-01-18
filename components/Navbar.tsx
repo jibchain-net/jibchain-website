@@ -34,7 +34,7 @@ export default function Navbar() {
                     width={64}
                     height={64}
                     alt="JibChain"
-                    className="h-8 w-auto"
+                    className="w-auto"
                   />
 
                 </div>
