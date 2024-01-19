@@ -1,14 +1,18 @@
-import Image from 'next/image'
+import Image, { StaticImageData } from 'next/image';
+import iconTokennine from '../public/img/icon/partner/tokennine.png';
+import iconJib from '../public/img/icon/partner/jib.png';
+import iconThaichain from '../public/img/icon/partner/thaichain.png';
+import iconSupra from '../public/img/icon/partner/supra.png';
+import iconCm from '../public/img/icon/partner/cm.png';
+import Link from 'next/link';
 
-import iconTokennine from '../public/img/icon/partner/tokennine.png'
-import iconJib from '../public/img/icon/partner/jib.png'
-import iconThaichain from '../public/img/icon/partner/thaichain.png'
-import iconSupra from '../public/img/icon/partner/supra.png'
-import iconCm from '../public/img/icon/partner/cm.png'
-import Link from 'next/link'
+interface PartnerItem {
+  icon: StaticImageData;
+  alt: string;
+  link: string;
+}
 
-
-const items = [
+const items: PartnerItem[] = [
   {
     icon: iconTokennine,
     alt: 'Tokennine',
@@ -34,13 +38,9 @@ const items = [
     alt: 'Cm',
     link: '/',
   },
-  
-  
-]
-
+];
 
 export default function Partner() {
-  
   return (
     <div className="py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -57,26 +57,24 @@ export default function Partner() {
           <div className="mx-auto grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-12 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 sm:gap-y-14 lg:mx-0 lg:max-w-none lg:grid-cols-5">
             {items.map((item) => (
               <div key={item.alt}>
-              <Link 
-                href={item.link}
-                rel="noopener noreferrer" 
-                target="_blank"
-                
-              >
-                <Image
-                  className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-                  src={item.icon}
-                  alt={item.alt}
-                  width={158}
-                  height={48}
-                  
-                />
-              </Link>
+                <Link 
+                  href={item.link}
+                  rel="noopener noreferrer" 
+                  target="_blank"
+                >
+                  <Image
+                    className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
+                    src={item.icon}
+                    alt={item.alt}
+                    width={158}
+                    height={48}
+                  />
+                </Link>
               </div>
             ))}
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }
