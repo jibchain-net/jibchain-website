@@ -2,7 +2,7 @@ import Image from 'next/image'
 import JibCard from './JibCard'
 import React from 'react';
 import JibButton from './Button';
-import logoJBC from '../public/img/Logo-wide.png';
+import logoJB from '../public/img/Logo-wide.png';
 const CTA: React.FC = () => {
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -11,10 +11,10 @@ const CTA: React.FC = () => {
             <JibCard>
                 <div className="grid grid-cols-1 justify-items-center py-8">
                     <Image
-                        src={logoJBC}
+                        src={logoJB}
                         width={116}
                         height={48}
-                        alt='JBC'
+                        alt='JB'
                         className='m-4'
                     />
 

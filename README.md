@@ -1,2 +1,2 @@
-# jibchain-website
-Jibchain.net: Your gateway to simplified and secure blockchain interactions.
+# jbchain-website
+JB Chain: Your gateway to simplified and secure blockchain interactions.

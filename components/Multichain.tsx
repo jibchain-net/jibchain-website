@@ -50,11 +50,11 @@ export default function Multichain() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <p className="mt-2 text-4xl font-bold tracking-tight text-primary-300 sm:text-5xl">
-            JBC on Multichain
+            JB on Multichain
           </p>
         </div>
         <p className="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-gray-400 pb-12">
-        JBC Token contract address across various chains.
+        JB Token contract address across various chains.
         </p>
         <div className="mx-auto">
           <div className="grid grid-cols-5 gap-4">

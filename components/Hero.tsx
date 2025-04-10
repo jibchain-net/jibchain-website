@@ -30,10 +30,10 @@ export default function Hero() {
             </a>
           </div>
           <h1 className="mt-10 text-4xl font-bold tracking-tight text-white sm:text-6xl">
-          The <span className='text-primary-300'>JBC</span> Community Powered, Developer Focused
+          The <span className='text-primary-300'>JB</span> Community Powered, Developer Focused
           </h1>
           <p className="mt-6 text-lg leading-8 text-secondary-100">
-          JIB Chain, an EVM-based platform, is powered by a community of 
+          JB Chain, an EVM-based platform, is powered by a community of 
           developers and secured by at-home stakers globally. It offers familiar 
           tooling and is soon introducing trustless bridges to major blockchains, 
           ensuring a seamless and secure experience.

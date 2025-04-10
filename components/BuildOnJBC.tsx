@@ -1,7 +1,7 @@
 import LogoBuildOnJBC from '../public/img/build-on-jbc.png'
 import Image from 'next/image'
 import JibButton from './Button'
-export default function BuildOnJBC() {
+export default function BuildOnJB() {
   return (
     <div className="overflow-hidden py-24 sm:py-32 build-on-JBC-bg">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -9,7 +9,7 @@ export default function BuildOnJBC() {
 
           <div className="lg:ml-auto lg:pl-4 lg:pt-4">
             <div className="lg:max-w-lg">
-              <h2 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">Build On JBC</h2>    
+              <h2 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">Build On JB</h2>    
               <p className="mt-6 text-lg leading-8 text-secondary-200 py-4">
                 Build brand new apps and protocol, See the get started guide and more
               </p>
@@ -22,7 +22,7 @@ export default function BuildOnJBC() {
               src={LogoBuildOnJBC}
               width={400}
               height={400}
-              alt='Build On JBC'
+              alt='Build On JB'
             />
           </div>
         </div>

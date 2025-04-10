@@ -10,7 +10,7 @@ const tiers = [
   {
     icon: iconBlend,
     topic: 'easy',
-    description: 'blockchain innovation JBC create a EVM Blockchain base on Erigon for easy interoperability.',
+    description: 'blockchain innovation JB create a EVM Blockchain base on Erigon for easy interoperability.',
   },
   {
     icon: iconFlashCircle,
@@ -25,18 +25,18 @@ const tiers = [
   
 ]
 
-export default function WhyJBC() {
+export default function WhyJB() {
   
   return (
     <div className="py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <p className="mt-2 text-4xl font-bold tracking-tight text-primary-300 sm:text-5xl">
-            Why JBC?
+            Why JB?
           </p>
         </div>
         <p className="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-secondary-100 pb-12">
-          JBC enables a world of Web3 and other new business models
+          JB enables a world of Web3 and other new business models
         </p>
 
         <div className="mx-auto max-w-6xl">

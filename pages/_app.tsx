@@ -21,7 +21,7 @@ const { chains, publicClient, webSocketPublicClient } = configureChains(
 );
 
 const { connectors } = getDefaultWallets({
-  appName: 'JibChain',
+  appName: 'JBChain',
   projectId: process.env.WALLET_CONNECT_ID ?? 'APPID',
   chains,
 });
@@ -46,15 +46,15 @@ function MyApp({ Component, pageProps }: AppProps) {
 
       >
       <Head>
-        <title>The JBC Community Powered, Developer Focused</title>
-        <meta property="og:title" content="The JBC Community Powered, Developer Focused" />
-        <meta property="og:description" content="JIB Chain, an EVM-based platform, is powered by a community of developers and secured by at-home stakers globally. It offers familiar tooling and is soon introducing trustless bridges to major blockchains, ensuring a seamless and secure experience." />
+        <title>The JB Community Powered, Developer Focused</title>
+        <meta property="og:title" content="The JB Community Powered, Developer Focused" />
+        <meta property="og:description" content="JB Chain, an EVM-based platform, is powered by a community of developers and secured by at-home stakers globally. It offers familiar tooling and is soon introducing trustless bridges to major blockchains, ensuring a seamless and secure experience." />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={coverImage.src} />
         
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="The JBC Community Powered, Developer Focused" />
-        <meta name="twitter:description" content="JIB Chain, an EVM-based platform, is powered by a community of developers and secured by at-home stakers globally. It offers familiar tooling and is soon introducing trustless bridges to major blockchains, ensuring a seamless and secure experience." />
+        <meta name="twitter:title" content="The JB Community Powered, Developer Focused" />
+        <meta name="twitter:description" content="JB Chain, an EVM-based platform, is powered by a community of developers and secured by at-home stakers globally. It offers familiar tooling and is soon introducing trustless bridges to major blockchains, ensuring a seamless and secure experience." />
         <meta name="twitter:image" content={coverImage.src} />
 
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
