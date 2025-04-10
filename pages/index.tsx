@@ -9,12 +9,14 @@ import BuildOnJB from '../components/BuildOnJB';
 import Ecosystem from '../components/Ecosystem';
 import Partner from '../components/Partner';
 import CTA from '../components/CTA';
+import JBMart from '../components/JBMart';
 
 
 const Home: NextPage = () => {
   return (
     <>
       <Hero />
+      <JBMart />
       <Validator />
       <WhyJB />
       <Multichain />
