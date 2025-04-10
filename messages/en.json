@@ -1,0 +1,45 @@
+{
+  "Navbar": {
+    "bridge": "Bridge",
+    "validators": "Validators",
+    "ecosystem": "Ecosystem",
+    "blockExplorer": "Block Explorer",
+    "beaconExplorer": "Beacon Explorer"
+  },
+  "Hero": {
+    "comingSoon": "Coming Soon",
+    "jbMartLaunch": "JB Mart Launch",
+    "titlePart1": "Revolutionizing",
+    "titlePart2": "E-Commerce",
+    "titlePart3": "on the Blockchain",
+    "description": "JB Chain is transforming digital commerce with a dedicated blockchain tailored for e-commerce. Our platform enables secure, transparent, and cost-effective shopping experiences while empowering merchants with next-generation tools.",
+    "learnMore": "Learn more",
+    "statsToday": "Today",
+    "statsTotalTx": "Total TX",
+    "statsWallets": "Wallets",
+    "featureJBMart": "JB Mart",
+    "featureJBMartDesc": "Decentralized marketplace launching soon",
+    "featureZeroFees": "Zero Fees",
+    "featureZeroFeesDesc": "Commission-free e-commerce transactions"
+  },
+  "JBMart": {
+    "introducing": "Introducing",
+    "jbmart": "jbmart",
+    "yourNextShoppingDestination": "Your Next Shopping Destination",
+    "getReadyToExperience": "Get ready to experience ecommerce like never before! JBChain is proud to introduce",
+    "ourRevolutionaryOnlineMarketplace": "our revolutionary online marketplace designed to compete with the leading platforms like Shopee and Lazada. We're building a shopping experience that prioritizes security, transparency, and rewards, all powered by the cutting-edge JBChain.",
+    "whatMakesJBMartDifferent": "What makes jbmart different?",
+    "stayTunedForOfficialLaunch": "Stay tuned for the official launch of jbmart! Sign up below to receive exclusive updates and early access opportunities.",
+    "getEarlyAccess": "Get Early Access",
+    "featureSecurityName": "Enhanced Security",
+    "featureSecurityDesc": "Shop with greater peace of mind knowing that transactions on jbmart are secured by the transparent and immutable JBChain.",
+    "featureTransparencyName": "Transparent Transactions",
+    "featureTransparencyDesc": "Experience a new level of clarity in your purchases, with the potential for transparent tracking and secure payment verification.",
+    "featureRewardsName": "Tokenized Rewards (Future)",
+    "featureRewardsDesc": "Look forward to exciting possibilities with token-based loyalty programs that truly reward your engagement on jbmart.",
+    "featureUXName": "Seamless User Experience",
+    "featureUXDesc": "jbmart is designed with you in mind, offering a user-friendly interface for effortless browsing and purchasing.",
+    "featurePlatformName": "Powered by JBChain",
+    "featurePlatformDesc": "Benefit from the underlying power of JBChain, ensuring a robust and innovative platform for both buyers and sellers."
+  }
+} 

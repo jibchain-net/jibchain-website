@@ -5,12 +5,13 @@ import { motion } from 'framer-motion';
 import { LockClosedIcon, ServerIcon, CurrencyDollarIcon, UserGroupIcon, CogIcon, ShoppingCartIcon } from '@heroicons/react/24/outline';
 import { Button } from '../app/components/ui/Button';
 import { Card, CardContent, CardHeader, CardTitle } from '../app/components/ui/Card';
+import { useTranslations } from 'next-intl';
 
 const features = [
   {
     id: 'security',
-    name: 'Enhanced Security',
-    description: 'Shop with greater peace of mind knowing that transactions on jbmart are secured by the transparent and immutable JBChain.',
+    nameKey: 'featureSecurityName',
+    descriptionKey: 'featureSecurityDesc',
     icon: LockClosedIcon,
     colSpan: 'col-span-2', 
     rowSpan: 'row-span-1',
@@ -20,8 +21,8 @@ const features = [
   },
   {
     id: 'transparency',
-    name: 'Transparent Transactions',
-    description: 'Experience a new level of clarity in your purchases, with the potential for transparent tracking and secure payment verification.',
+    nameKey: 'featureTransparencyName',
+    descriptionKey: 'featureTransparencyDesc',
     icon: ServerIcon, 
     colSpan: 'col-span-1',
     rowSpan: 'row-span-1',
@@ -31,8 +32,8 @@ const features = [
   },
   {
     id: 'rewards',
-    name: 'Tokenized Rewards (Future)',
-    description: 'Look forward to exciting possibilities with token-based loyalty programs that truly reward your engagement on jbmart.',
+    nameKey: 'featureRewardsName',
+    descriptionKey: 'featureRewardsDesc',
     icon: CurrencyDollarIcon,
     colSpan: 'col-span-1',
     rowSpan: 'row-span-1',
@@ -42,8 +43,8 @@ const features = [
   },
   {
     id: 'ux',
-    name: 'Seamless User Experience',
-    description: 'jbmart is designed with you in mind, offering a user-friendly interface for effortless browsing and purchasing.',
+    nameKey: 'featureUXName',
+    descriptionKey: 'featureUXDesc',
     icon: UserGroupIcon,
     colSpan: 'col-span-1',
     rowSpan: 'row-span-1',
@@ -53,8 +54,8 @@ const features = [
   },
   {
     id: 'platform',
-    name: 'Powered by JBChain',
-    description: 'Benefit from the underlying power of JBChain, ensuring a robust and innovative platform for both buyers and sellers.',
+    nameKey: 'featurePlatformName',
+    descriptionKey: 'featurePlatformDesc',
     icon: CogIcon,
     colSpan: 'col-span-1',
     rowSpan: 'row-span-1',
@@ -65,6 +66,7 @@ const features = [
 ];
 
 export default function JBMart() {
+  const t = useTranslations('JBMart');
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
@@ -111,9 +113,9 @@ export default function JBMart() {
               </span>
             </div>
             {/* Adjust text colors */}
-            <h2 className="text-base font-semibold leading-7 text-primary-500">Introducing</h2>
+            <h2 className="text-base font-semibold leading-7 text-primary-500">{t('introducing')}</h2>
             <p className="mt-2 text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl">
-              <span className="bg-gradient-to-r from-palette-yellow via-palette-amber to-palette-orange bg-clip-text text-transparent">jbmart:</span> Your Next Shopping Destination
+              <span className="bg-gradient-to-r from-palette-yellow via-palette-amber to-palette-orange bg-clip-text text-transparent">{t('jbmart')}:</span> {t('yourNextShoppingDestination')}
             </p>
           </motion.div>
           <motion.p
@@ -123,7 +125,7 @@ export default function JBMart() {
             viewport={{ once: true }}
             className="mt-6 text-lg leading-8 text-gray-600" // Adjust text color
           >
-            Get ready to experience ecommerce like never before! JBChain is proud to introduce <span className="font-bold text-primary-500">jbmart</span>, our revolutionary online marketplace designed to compete with the leading platforms like Shopee and Lazada. We&apos;re building a shopping experience that prioritizes security, transparency, and rewards, all powered by the cutting-edge JBChain.
+            {t('getReadyToExperience')} <span className="font-bold text-primary-500">{t('jbmart')}</span>, {t('ourRevolutionaryOnlineMarketplace')}
           </motion.p>
         </div>
         
@@ -134,7 +136,7 @@ export default function JBMart() {
           viewport={{ once: true, amount: 0.2 }}
         >
           <div className="mx-auto mt-16 max-w-4xl sm:mt-20 lg:mt-24">
-            <h3 className="text-2xl font-bold text-gray-800 text-center mb-12">What makes jbmart different?</h3>
+            <h3 className="text-2xl font-bold text-gray-800 text-center mb-12">{t('whatMakesJBMartDifferent')}</h3>
             <motion.div 
               variants={containerVariants} 
               className="grid grid-cols-1 gap-6 md:grid-cols-3 lg:grid-cols-3 auto-rows-[18rem]"
@@ -156,8 +158,8 @@ export default function JBMart() {
                       </span>
                     </CardHeader>
                     <CardContent className="p-0 flex flex-col flex-grow">
-                      <CardTitle className="text-lg font-semibold text-gray-800 mb-2">{feature.name}</CardTitle>
-                      <p className="text-sm leading-6 text-gray-600 flex-grow">{feature.description}</p>
+                      <CardTitle className="text-lg font-semibold text-gray-800 mb-2">{t(feature.nameKey)}</CardTitle>
+                      <p className="text-sm leading-6 text-gray-600 flex-grow">{t(feature.descriptionKey)}</p>
                     </CardContent>
                   </Card>
                 </motion.div>
@@ -175,10 +177,10 @@ export default function JBMart() {
         >
           <div className="text-center gradient-light-amber p-8 rounded-2xl border border-palette-amber/20 shadow-lg shadow-palette-amber/10">
             <p className="text-lg text-gray-700 mb-6 max-w-md mx-auto">
-              Stay tuned for the official launch of jbmart! Sign up below to receive exclusive updates and early access opportunities.
+              {t('stayTunedForOfficialLaunch')}
             </p>
             <Button size="lg" variant="default" className="bg-gradient-to-r from-palette-yellow via-palette-amber to-palette-orange text-gray-800 font-medium shadow-md hover:shadow-lg transition-shadow">
-              Get Early Access
+              {t('getEarlyAccess')}
             </Button>
           </div>
         </motion.div>

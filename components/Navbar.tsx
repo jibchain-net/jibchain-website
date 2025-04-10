@@ -5,21 +5,25 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Image from 'next/image'
 import Logo from '../public/img/Logo.png'
 import { ConnectButton } from '@rainbow-me/rainbowkit';
-
-const navigation = [
-  { name: 'Bridge', href: 'https://bridge.jbcha.in/', target: '_new' },
-  { name: 'Validators', href: '#validator', target: '_self' },
-  { name: 'Ecosystem', href: '#ecosystem', target: '_self' },
-  { name: 'Block Explorer', href: 'https://exp-l1.jibchain.net/', target: '_new' },
-  { name: 'Beacon Explorer', href: 'https://dora.jibchain.net/', target: '_new' },
-];
+import LanguageSwitcher from './LanguageSwitcher';
+import { useTranslations } from 'next-intl';
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ');
 }
 
 export default function Navbar() {
+  const t = useTranslations('Navbar');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  // Updated navigation items with translation keys
+  const navigation = [
+    { name: t('bridge'), href: 'https://bridge.jbcha.in/', target: '_new' },
+    { name: t('validators'), href: '#validator', target: '_self' },
+    { name: t('ecosystem'), href: '#ecosystem', target: '_self' },
+    { name: t('blockExplorer'), href: 'https://exp-l1.jibchain.net/', target: '_new' },
+    { name: t('beaconExplorer'), href: 'https://dora.jibchain.net/', target: '_new' },
+  ];
 
   return (
     <nav className="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-200">
@@ -52,34 +56,41 @@ export default function Navbar() {
           </div>
 
           {/* Connect Button (Right side) */}
-          <div className="flex items-center">
-            <div className="hidden sm:block mr-4">
-              <ConnectButton />
+          <div className="hidden lg:flex items-center space-x-1">
+            <LanguageSwitcher />
+            <div className="ml-4">
+              <ConnectButton 
+                accountStatus={{
+                  smallScreen: 'avatar',
+                  largeScreen: 'full',
+                }}
+                showBalance={false}
+              />
             </div>
-
-            {/* Mobile menu button */} 
-            <div className="flex items-center sm:hidden">
-              <button
-                type="button"
-                className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500 transition-all"
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              >
-                <span className="absolute -inset-0.5" />
-                <span className="sr-only">Open main menu</span>
-                {mobileMenuOpen ? (
-                  <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
-                ) : (
-                  <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
-                )}
-              </button>
-            </div>
-            {/* Mobile connect button shown only when menu is closed */} 
-            {!mobileMenuOpen && (
-              <div className="sm:hidden ml-2">
-                  <ConnectButton />
-              </div>
-            )}
           </div>
+
+          {/* Mobile menu button */} 
+          <div className="flex items-center sm:hidden">
+            <button
+              type="button"
+              className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500 transition-all"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              <span className="absolute -inset-0.5" />
+              <span className="sr-only">Open main menu</span>
+              {mobileMenuOpen ? (
+                <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
+              ) : (
+                <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
+              )}
+            </button>
+          </div>
+          {/* Mobile connect button shown only when menu is closed */} 
+          {!mobileMenuOpen && (
+            <div className="sm:hidden ml-2">
+                <ConnectButton />
+            </div>
+          )}
         </div>
       </div>
 
@@ -101,6 +112,9 @@ export default function Navbar() {
           {/* Add Connect Button inside mobile menu panel when open */} 
           <div className="pt-4 border-t border-gray-200 px-3">
             <ConnectButton />
+          </div>
+          <div className="px-5 py-2">
+            <LanguageSwitcher />
           </div>
         </div>
       </div>
