@@ -8,33 +8,73 @@ import { Card, CardContent, CardHeader, CardTitle } from '../app/components/ui/C
 
 const features = [
   {
+    id: 'security',
     name: 'Enhanced Security',
     description: 'Shop with greater peace of mind knowing that transactions on jbmart are secured by the transparent and immutable JBChain.',
     icon: LockClosedIcon,
+    colSpan: 'col-span-2', 
+    rowSpan: 'row-span-1',
+    gradientClass: 'gradient-light-coral', // Match Hero bento style
+    borderColor: 'border-palette-coral/20',
+    iconColor: 'text-palette-coral',
   },
   {
+    id: 'transparency',
     name: 'Transparent Transactions',
     description: 'Experience a new level of clarity in your purchases, with the potential for transparent tracking and secure payment verification.',
-    icon: ServerIcon,
+    icon: ServerIcon, 
+    colSpan: 'col-span-1',
+    rowSpan: 'row-span-1',
+    gradientClass: 'gradient-light-yellow',
+    borderColor: 'border-palette-yellow/20',
+    iconColor: 'text-palette-yellow',
   },
   {
+    id: 'rewards',
     name: 'Tokenized Rewards (Future)',
     description: 'Look forward to exciting possibilities with token-based loyalty programs that truly reward your engagement on jbmart.',
     icon: CurrencyDollarIcon,
+    colSpan: 'col-span-1',
+    rowSpan: 'row-span-1',
+    gradientClass: 'gradient-light-amber',
+    borderColor: 'border-palette-amber/20',
+    iconColor: 'text-palette-amber',
   },
   {
+    id: 'ux',
     name: 'Seamless User Experience',
     description: 'jbmart is designed with you in mind, offering a user-friendly interface for effortless browsing and purchasing.',
     icon: UserGroupIcon,
+    colSpan: 'col-span-1',
+    rowSpan: 'row-span-1',
+    gradientClass: 'gradient-light-orange',
+    borderColor: 'border-palette-orange/20',
+    iconColor: 'text-palette-orange',
   },
   {
+    id: 'platform',
     name: 'Powered by JBChain',
     description: 'Benefit from the underlying power of JBChain, ensuring a robust and innovative platform for both buyers and sellers.',
     icon: CogIcon,
+    colSpan: 'col-span-1',
+    rowSpan: 'row-span-1',
+    gradientClass: 'gradient-light-yellow', // Reuse a gradient
+    borderColor: 'border-palette-yellow/20',
+    iconColor: 'text-palette-yellow',
   }
 ];
 
 export default function JBMart() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, scale: 0.95 },
+    visible: { opacity: 1, scale: 1, transition: { duration: 0.4 } },
+  };
+
   return (
     <div className="relative py-24 sm:py-32 overflow-hidden bg-gradient-to-br from-white to-light-surface" id="jbmart">
       {/* Optional: Adjust or remove background pattern/blobs for light theme */}
@@ -88,38 +128,41 @@ export default function JBMart() {
         </div>
         
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          viewport={{ once: true }}
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
         >
-          <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
-            <h3 className="text-xl font-bold text-primary-500 text-center mb-8">What makes jbmart different?</h3>
-            <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
-              {features.map((feature, idx) => (
+          <div className="mx-auto mt-16 max-w-4xl sm:mt-20 lg:mt-24">
+            <h3 className="text-2xl font-bold text-gray-800 text-center mb-12">What makes jbmart different?</h3>
+            <motion.div 
+              variants={containerVariants} 
+              className="grid grid-cols-1 gap-6 md:grid-cols-3 lg:grid-cols-3 auto-rows-[18rem]"
+            >
+              {features.map((feature) => (
                 <motion.div
-                  key={feature.name}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.1 * idx }}
-                  viewport={{ once: true }}
-                  className="relative"
+                  key={feature.id}
+                  variants={itemVariants}
+                  className={`${feature.colSpan || 'col-span-1'} ${feature.rowSpan || 'row-span-1'}`}
                 >
-                 {/* Use light card variant with valid hover prop */}
-                 <Card variant="default" hover="default" className="h-full">
-                    <CardHeader className="flex flex-row items-center gap-4 pb-2">
-                       <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary-100">
-                         <feature.icon className="h-6 w-6 text-primary-500" aria-hidden="true" />
-                       </span>
-                       <CardTitle className="text-lg font-semibold text-gray-800">{feature.name}</CardTitle>
-                     </CardHeader>
-                     <CardContent>
-                       <p className="text-base leading-7 text-gray-600">{feature.description}</p>
-                     </CardContent>
+                  <Card 
+                    variant="glass" // Use glass for the subtle bg-white/80 backdrop-blur
+                    hover="default" 
+                    className={`relative h-full flex flex-col p-6 overflow-hidden border ${feature.borderColor} ${feature.gradientClass}`}
+                  >
+                    <CardHeader className="p-0 mb-3">
+                      <span className={`flex h-10 w-10 items-center justify-center rounded-lg bg-white/60`}>
+                        <feature.icon className={`h-6 w-6 ${feature.iconColor}`} aria-hidden="true" />
+                      </span>
+                    </CardHeader>
+                    <CardContent className="p-0 flex flex-col flex-grow">
+                      <CardTitle className="text-lg font-semibold text-gray-800 mb-2">{feature.name}</CardTitle>
+                      <p className="text-sm leading-6 text-gray-600 flex-grow">{feature.description}</p>
+                    </CardContent>
                   </Card>
                 </motion.div>
               ))}
-            </dl>
+            </motion.div>
           </div>
         </motion.div>
         
@@ -130,12 +173,10 @@ export default function JBMart() {
           viewport={{ once: true }}
           className="mt-16 flex justify-center"
         >
-           {/* Adjust background/border for light theme */}
-          <div className="text-center bg-gradient-to-r from-white to-light-surface p-8 rounded-2xl border border-palette-amber/20 shadow-xl shadow-palette-orange/5">
-            <p className="text-lg text-gray-600 mb-6">
+          <div className="text-center gradient-light-amber p-8 rounded-2xl border border-palette-amber/20 shadow-lg shadow-palette-amber/10">
+            <p className="text-lg text-gray-700 mb-6 max-w-md mx-auto">
               Stay tuned for the official launch of jbmart! Sign up below to receive exclusive updates and early access opportunities.
             </p>
-            {/* Button already uses appropriate theme */}
             <Button size="lg" variant="default" className="bg-gradient-to-r from-palette-yellow via-palette-amber to-palette-orange text-gray-800 font-medium shadow-md hover:shadow-lg transition-shadow">
               Get Early Access
             </Button>
