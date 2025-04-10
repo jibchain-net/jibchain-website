@@ -1,13 +1,15 @@
 import '../../styles/globals.css';
 import '@rainbow-me/rainbowkit/styles.css'; 
 import { Metadata, Viewport } from 'next';
-import Navbar from '../../components/Navbar'; // Correct path
+import Navbar from '../../components/Navbar';
 import { Plus_Jakarta_Sans, Poppins } from 'next/font/google';
 import React from 'react';
-import { Providers } from '../../app/providers'; // Correct path
-import { NextIntlClientProvider, useMessages } from 'next-intl'; // Import NextIntl
+import { Providers } from '../providers';
+import { WalletProviders } from '../wallet-providers';
+import { unstable_setRequestLocale } from 'next-intl/server';
+import { NextIntlClientProvider } from 'next-intl';
 
-// Font setup - Restored full config
+// Font setup
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ['latin'],
   variable: '--font-plus-jakarta-sans',
@@ -103,26 +105,32 @@ export const viewport: Viewport = {
   userScalable: false,
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
-  params: {locale} // Receive locale param
+  params
 }: {
   children: React.ReactNode;
-  params: {locale: string};
+  params: { locale: string };
 }) {
-  // Receive messages
-  const messages = useMessages();
+  // This is the new recommended approach for Next.js 15
+  const locale = params.locale;
+  unstable_setRequestLocale(locale);
+
+  // Get messages for the current locale
+  const messages = await import(`../../messages/${locale}.json`);
 
   return (
     <html lang={locale} className={`${plusJakartaSans.variable} ${poppins.variable}`}>
       <body>
-        {/* Wrap Providers with NextIntlClientProvider */}
-        <NextIntlClientProvider locale={locale} messages={messages}>
-          <Providers>
-            <Navbar />
-            {children}
-          </Providers>
-        </NextIntlClientProvider>
+        {/* Wallet providers are outside the i18n providers to avoid reinitializing on language change */}
+        <WalletProviders>
+          <NextIntlClientProvider locale={locale} messages={messages.default}>
+            <Providers>
+              <Navbar />
+              {children}
+            </Providers>
+          </NextIntlClientProvider>
+        </WalletProviders>
       </body>
     </html>
   )

@@ -1,11 +1,12 @@
 'use client'
 
 import { ChevronRightIcon } from '@heroicons/react/20/solid'
-import { ConnectButton } from '@rainbow-me/rainbowkit'
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { ShoppingBagIcon, CurrencyDollarIcon, LightBulbIcon } from '@heroicons/react/24/outline'
+import { useTranslations } from 'next-intl'
+import SafeConnectButton from './SafeConnectButton'
 
 interface Stat {
   id: number;
@@ -15,8 +16,12 @@ interface Stat {
 
 export default function Hero() {
   const [stats, setStats] = useState<Stat[]>([]);
-
+  const t = useTranslations('Hero');
+  const [mounted, setMounted] = useState(false);
+  
   useEffect(() => {
+    setMounted(true);
+    
     // Fetch data from the API endpoint
     const fetchData = async () => {
       try {
@@ -51,6 +56,11 @@ export default function Hero() {
 
     fetchData(); // Call the fetch function
   }, []);
+
+  // Don't render until client-side hydration is complete
+  if (!mounted) {
+    return null;
+  }
 
   // Animation variants for staggered animations
   const containerVariants = {
@@ -92,9 +102,9 @@ export default function Hero() {
           <motion.div variants={itemVariants} className="lg:col-span-7 max-w-3xl">
             <div className="mb-6">
               <a href="#" className="inline-flex items-center rounded-full bg-palette-coral/10 px-4 py-1.5 text-sm font-medium text-palette-coral ring-1 ring-inset ring-palette-coral/20 transition-all hover:bg-palette-coral/20">
-                <span className="font-medium">Coming Soon</span>
+                <span className="font-medium">{t('comingSoon')}</span>
                 <span className="ml-2 inline-flex items-center gap-1 text-palette-amber">
-                  <span>JB Mart Launch</span>
+                  <span>{t('jbMartLaunch')}</span>
                   <ChevronRightIcon className="h-4 w-4" aria-hidden="true" />
                 </span>
               </a>
@@ -111,11 +121,11 @@ export default function Hero() {
             </p>
             
             <div className="mt-8 flex flex-wrap gap-4">
-              <ConnectButton />
+              <SafeConnectButton />
               
               <a href="#jbmart" className="inline-flex items-center gap-x-2 rounded-lg bg-white px-5 py-2.5 text-sm font-semibold text-gray-800 shadow-sm ring-1 ring-gray-200 hover:bg-gray-50 transition-all">
                 <LightBulbIcon className="-ml-0.5 h-5 w-5 text-palette-amber" aria-hidden="true" />
-                Learn more
+                {t('learnMore')}
               </a>
             </div>
           </motion.div>

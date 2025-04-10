@@ -41,5 +41,61 @@
     "featureUXDesc": "jbmart is designed with you in mind, offering a user-friendly interface for effortless browsing and purchasing.",
     "featurePlatformName": "Powered by JBChain",
     "featurePlatformDesc": "Benefit from the underlying power of JBChain, ensuring a robust and innovative platform for both buyers and sellers."
+  },
+  "Validator": {
+    "becomeValidator": "Become a Validator",
+    "joinMovement": "Join the Movement",
+    "description": "Stake, Validate, and Shape the Blockchain Landscape. Fueling innovation, powering growth.",
+    "detailedDescription": "Your stake strengthens the network, enabling the development of groundbreaking dApps and shaping the future of decentralized finance. Be a part of something bigger and share in the rewards.",
+    "learnHowToStake": "Learn How to Stake",
+    "featureEarnTitle": "Earn Passive Income",
+    "featureEarnDesc": "Stake JBC to receive staking rewards, creating a steady and passive income stream.",
+    "featureSecurityTitle": "Enhance Network Security",
+    "featureSecurityDesc": "Actively contribute to the security and decentralization of the JibChain network.",
+    "featureSupportTitle": "Support JibChain's Development",
+    "featureSupportDesc": "Play a crucial role in JibChain's evolution, contributing to its growth and development."
+  },
+  "WhyJB": {
+    "platformBenefits": "Platform Benefits",
+    "whyJB": "Why JB?",
+    "description": "JB enables a world of Web3 innovation and entirely new business models",
+    "featureIntegrationTitle": "Easy Integration",
+    "featureIntegrationDesc": "Blockchain innovation with JB creating an EVM Blockchain based on Erigon for seamless interoperability.",
+    "featureScalableTitle": "Highly Scalable",
+    "featureScalableDesc": "Build dApps that can grow and evolve without hitting performance walls, even with increasing user adoption.",
+    "featureOptimizedTitle": "Ultra Optimized",
+    "featureOptimizedDesc": "Create lightning-fast dApps with our ultra-optimized infrastructure, designed for maximum performance and efficiency."
+  },
+  "Multichain": {
+    "jbOnMultichain": "JB on Multichain",
+    "description": "JB Token contract addresses across various blockchain networks"
+  },
+  "BuildOnJB": {
+    "developers": "Developers",
+    "buildOnJB": "Build On JB",
+    "description": "Create innovative apps and protocols on the JB Chain platform. Our comprehensive toolkit and developer resources make it easy to build, test, and deploy your blockchain solutions.",
+    "developerPortal": "Developer Portal"
+  },
+  "Ecosystem": {
+    "growingEcosystem": "Growing Ecosystem",
+    "integratedApps": "Integrated Apps",
+    "description": "JB Chain hosts a growing range of applications providing real-world utility. Explore our diverse ecosystem that spans exchanges, oracles, NFT marketplaces, and more.",
+    "explore": "Explore",
+    "comingSoon": "Coming Soon"
+  },
+  "Partner": {
+    "ourPartners": "Our Partners",
+    "description": "From established players to rising stars, our dedicated partners bring their diverse strengths to the table, powering growth and building a brighter blockchain future."
+  },
+  "CTA": {
+    "codeNewParadigm": "Code the New Paradigm",
+    "description": "Architect the future of decentralized finance and tokenized economies. Our developer tools empower you to craft groundbreaking blockchain solutions.",
+    "craftContracts": "Craft Contracts Now"
+  },
+  "Footer": {
+    "facebook": "Facebook",
+    "x": "X",
+    "github": "GitHub",
+    "copyright": "© {year} Thaichain Foundation. All rights reserved."
   }
 } 

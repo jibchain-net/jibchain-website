@@ -1,4 +1,5 @@
 import { JSX, SVGProps } from "react"
+import { useTranslations } from 'next-intl';
 
 const navigation = [
     {
@@ -40,6 +41,8 @@ const navigation = [
   ]
   
   export default function Footer() {
+    const t = useTranslations('Footer');
+    
     return (
       <footer>
         <div className="mx-auto max-w-7xl px-6 py-12 md:flex md:items-center md:justify-between lg:px-8">
@@ -53,7 +56,7 @@ const navigation = [
           </div>
           <div className="mt-8 md:order-1 md:mt-0">
             <p className="text-center text-xs leading-5 text-gray-500">
-              &copy; 2024 Thaichain Fouation. All rights reserved.
+              {t('copyright', { year: new Date().getFullYear() })}
             </p>
           </div>
         </div>

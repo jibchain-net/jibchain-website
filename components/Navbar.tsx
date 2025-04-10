@@ -1,10 +1,10 @@
 'use client'; // Navbar needs to be a client component for state and interactions
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Image from 'next/image'
 import Logo from '../public/img/Logo.png'
-import { ConnectButton } from '@rainbow-me/rainbowkit';
+import SafeConnectButton from './SafeConnectButton';
 import LanguageSwitcher from './LanguageSwitcher';
 import { useTranslations } from 'next-intl';
 
@@ -15,6 +15,12 @@ function classNames(...classes: string[]) {
 export default function Navbar() {
   const t = useTranslations('Navbar');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  // Add hydration safety
+  const [mounted, setMounted] = useState(false);
+  
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   // Updated navigation items with translation keys
   const navigation = [
@@ -24,6 +30,11 @@ export default function Navbar() {
     { name: t('blockExplorer'), href: 'https://exp-l1.jibchain.net/', target: '_new' },
     { name: t('beaconExplorer'), href: 'https://dora.jibchain.net/', target: '_new' },
   ];
+
+  // Don't render until client-side hydration is complete
+  if (!mounted) {
+    return null;
+  }
 
   return (
     <nav className="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-200">
@@ -59,13 +70,7 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center space-x-1">
             <LanguageSwitcher />
             <div className="ml-4">
-              <ConnectButton 
-                accountStatus={{
-                  smallScreen: 'avatar',
-                  largeScreen: 'full',
-                }}
-                showBalance={false}
-              />
+              <SafeConnectButton />
             </div>
           </div>
 
@@ -88,7 +93,7 @@ export default function Navbar() {
           {/* Mobile connect button shown only when menu is closed */} 
           {!mobileMenuOpen && (
             <div className="sm:hidden ml-2">
-                <ConnectButton />
+              <SafeConnectButton />
             </div>
           )}
         </div>
@@ -111,7 +116,7 @@ export default function Navbar() {
           ))}
           {/* Add Connect Button inside mobile menu panel when open */} 
           <div className="pt-4 border-t border-gray-200 px-3">
-            <ConnectButton />
+            <SafeConnectButton />
           </div>
           <div className="px-5 py-2">
             <LanguageSwitcher />

@@ -1,5 +1,6 @@
 import { Suspense } from 'react';
 import { Metadata } from 'next';
+import { unstable_setRequestLocale } from 'next-intl/server';
 
 // Direct imports for page sections
 import Hero from '../../components/Hero';
@@ -18,8 +19,14 @@ export const metadata: Metadata = {
   description: 'Welcome to JibChain',
 };
 
-export default function Home() {
-  // Translation hooks can be used here when components need them
+export default async function Home({
+  params
+}: {
+  params: { locale: string }
+}) {
+  // Set the locale for the request
+  const locale = params.locale;
+  unstable_setRequestLocale(locale);
   
   return (
     <main>
