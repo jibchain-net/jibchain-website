@@ -2,30 +2,140 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  scroll-behavior: smooth;
+/* Moved font imports to layout.tsx using next/font */
+
+:root {
+  /* Light vibrant color palette */
+  --color-yellow: #FFF085;
+  --color-amber: #FCB454;
+  --color-orange: #FF9B17;
+  --color-coral: #F16767;
+  
+  /* Update primary colors to the new palette but lighter */
+  --color-primary-50: #fff9e0;
+  --color-primary-100: #fff5cc;
+  --color-primary-200: #fff085;
+  --color-primary-300: #fce07a;
+  --color-primary-400: #fcb454;
+  --color-primary-500: #ff9b17;
+  --color-primary-600: #f87a30;
+  --color-primary-700: #ea5936;
+  --color-primary-800: #f16767;
+  --color-primary-900: #d44464;
+
+  /* Secondary colors - blues that complement the primary colors */
+  --color-secondary-50: #f0f7ff;
+  --color-secondary-100: #e0eefe;
+  --color-secondary-200: #bae0fd;
+  --color-secondary-300: #78c6fa;
+  --color-secondary-400: #36adf2;
+  --color-secondary-500: #0c92e4;
+  --color-secondary-600: #0074c6;
+  --color-secondary-700: #005da1;
+  --color-secondary-800: #064f84;
+  --color-secondary-900: #0a426e;
+  --color-secondary-950: #062a49;
 }
 
-body{
-  background-color: #070A0F;
+/* Base styles for the light site */
+@layer base {
+  body {
+    @apply bg-white text-gray-800;
+    font-family: var(--font-plus-jakarta-sans), sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-poppins), sans-serif;
+    @apply font-semibold;
+  }
 }
 
-/* .hero-bg{
-  background: 
-    linear-gradient(90deg,
-    color(display-p3 0.0275 0.0392 0.0588) 35.07%,
-    color(display-p3 0.0275 0.0392 0.0588 / 0.00) 54.27%),
-    linear-gradient(180deg,
-    color(display-p3 0.0275 0.0392 0.0588 / 0.00) 50%,
-    color(display-p3 0.0275 0.0392 0.0588) 100%),
-    url('/img/hero-bg.jpg') no-repeat center;
-} */
+/* Add gradient backgrounds with new light colors */
+.hero-bg {
+  background: linear-gradient(to bottom, #ffffff, #f7f9fc);
+  position: relative;
+}
 
+.hero-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 155, 23, 0.1), transparent 60%);
+  pointer-events: none;
+}
+
+/* Add JB Card styles with new light colors */
+.jib-card {
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  border-radius: 1rem;
+  border: 1px solid rgba(252, 180, 84, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.jib-card:hover {
+  border-color: rgba(255, 155, 23, 0.4);
+  box-shadow: 0 8px 30px rgba(255, 155, 23, 0.12);
+}
+
+/* For the feature cards */
+.feature-card {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(241, 103, 103, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  border-color: rgba(241, 103, 103, 0.4);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 8px 30px rgba(241, 103, 103, 0.12);
+}
+
+/* Build on JB background */
+.build-on-JBC-bg {
+  background: linear-gradient(to bottom right, #f7f9fc, #ffffff);
+  position: relative;
+}
+
+.build-on-JBC-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 80%, rgba(255, 240, 133, 0.15), transparent 60%);
+  pointer-events: none;
+}
+
+/* Light-mode gradients for backgrounds */
+.gradient-light-yellow {
+  background: linear-gradient(135deg, rgba(255, 240, 133, 0.1), rgba(255, 240, 133, 0.05));
+}
+
+.gradient-light-amber {
+  background: linear-gradient(135deg, rgba(252, 180, 84, 0.1), rgba(252, 180, 84, 0.05));
+}
+
+.gradient-light-orange {
+  background: linear-gradient(135deg, rgba(255, 155, 23, 0.1), rgba(255, 155, 23, 0.05));
+}
+
+.gradient-light-coral {
+  background: linear-gradient(135deg, rgba(241, 103, 103, 0.1), rgba(241, 103, 103, 0.05));
+}
+
+/* Keep some of the existing styling for background images */
 .hero-bg {
   background: url(/img/hero-bg.jpg) no-repeat;
   background-size: cover;
 }
-
 
 .validator-bg{
   background: url('/img/Rocket.jpg') no-repeat center;
@@ -34,11 +144,3 @@ body{
 /* .build-on-JBC-bg{
   background: url('/img/build-on-jbc.png') no-repeat center;
 } */
-
-.jib-card{
-  border-radius: 16px;
-  border: 1px solid var(--Gradient-Frame, rgba(44, 86, 151, 0.00));
-  border: 1px solid var(--Gradient-Frame, color(display-p3 0.2392 0.3294 0.5569 / 0.00));
-  background: var(--Gradient-Card-1, radial-gradient(87.82% 86.94% at 100.12% 0%, #1A366A 0%, #101624 100%));
-  background: var(--Gradient-Card-1, radial-gradient(87.82% 86.94% at 100.12% 0%, color(display-p3 0.1294 0.2078 0.4) 0%, color(display-p3 0.0667 0.0863 0.1373) 100%));
-}

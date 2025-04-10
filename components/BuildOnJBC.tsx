@@ -1,6 +1,7 @@
 import LogoBuildOnJBC from '../public/img/build-on-jbc.png'
 import Image from 'next/image'
-import JibButton from './Button'
+import { Button } from '../app/components/ui/Button'
+
 export default function BuildOnJB() {
   return (
     <div className="overflow-hidden py-24 sm:py-32 build-on-JBC-bg">
@@ -13,7 +14,9 @@ export default function BuildOnJB() {
               <p className="mt-6 text-lg leading-8 text-secondary-200 py-4">
                 Build brand new apps and protocol, See the get started guide and more
               </p>
-              <JibButton text="Developer Portal" size="xl" />
+              <Button variant="default" size="lg" className="bg-primary-500 text-white hover:bg-primary-600">
+                Developer Portal
+              </Button>
               
             </div>
           </div>

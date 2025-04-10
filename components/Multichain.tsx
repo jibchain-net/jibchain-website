@@ -1,3 +1,5 @@
+'use client';
+
 import { shortenEthAddress } from '../utils/helpers'
 import Image from 'next/image'
 import Link from 'next/link'

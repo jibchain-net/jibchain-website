@@ -1,10 +1,13 @@
+'use client';
+
 import Image, { StaticImageData } from 'next/image';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
 import iconTokennine from '../public/img/icon/partner/tokennine.png';
 import iconJib from '../public/img/icon/partner/jib.png';
 import iconThaichain from '../public/img/icon/partner/thaichain.png';
 import iconSupra from '../public/img/icon/partner/supra.png';
 import iconCm from '../public/img/icon/partner/cm.png';
-import Link from 'next/link';
 
 interface PartnerItem {
   icon: StaticImageData;
@@ -41,39 +44,66 @@ const items: PartnerItem[] = [
 ];
 
 export default function Partner() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { 
+      opacity: 1, 
+      transition: { staggerChildren: 0.1, delayChildren: 0.2 }
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, scale: 0.9 },
+    visible: { opacity: 1, scale: 1, transition: { duration: 0.4 } },
+  };
+
   return (
-    <div className="py-24 sm:py-32">
+    <div className="py-24 sm:py-32 bg-white">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-4xl text-center">
-          <p className="mt-2 text-4xl font-bold tracking-tight text-primary-300 sm:text-5xl">
-            Our Partner
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="mx-auto max-w-4xl text-center"
+        >
+          <h2 className="mt-2 text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl">
+            Our Partners
+          </h2>
+          <p className="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-gray-600 pb-12">
+            From established players to rising stars, our dedicated partners bring their 
+            diverse strengths to the table, powering growth and building a brighter blockchain future.
           </p>
-        </div>
-        <p className="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-secondary-100 pb-12">
-          From established players to rising stars, our dedicated partners bring their 
-          diverse strengths to the table, powering growth and building a brighter blockchain future.
-        </p>
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        </motion.div>
+        
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          className="mx-auto max-w-7xl px-6 lg:px-8"
+        >
           <div className="mx-auto grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-12 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 sm:gap-y-14 lg:mx-0 lg:max-w-none lg:grid-cols-5">
             {items.map((item) => (
-              <div key={item.alt}>
+              <motion.div key={item.alt} variants={itemVariants} className="flex justify-center">
                 <Link 
                   href={item.link}
                   rel="noopener noreferrer" 
                   target="_blank"
+                  className="block transition-opacity hover:opacity-75"
                 >
                   <Image
-                    className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
+                    className="max-h-12 w-full object-contain"
                     src={item.icon}
                     alt={item.alt}
                     width={158}
                     height={48}
                   />
                 </Link>
-              </div>
+              </motion.div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

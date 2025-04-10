@@ -1,7 +1,9 @@
+'use client';
+
 import LogoBuildOnJBC from '../public/img/build-on-jbc.png'
 import Image from 'next/image'
-import JibButton from './Button'
 import { motion } from 'framer-motion'
+import { Button } from '../app/components/ui/Button'
 
 export default function BuildOnJB() {
   return (
@@ -59,7 +61,9 @@ export default function BuildOnJB() {
               </p>
             </div>
             <div className="mt-4">
-              <JibButton text="Developer Portal" size="xl" />
+              <Button variant="default" size="lg" className="bg-primary-500 text-white hover:bg-primary-600">
+                Developer Portal
+              </Button>
             </div>
           </motion.div>
         </div>

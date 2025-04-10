@@ -1,6 +1,8 @@
+'use client';
+
 import Image from 'next/image'
 import React from 'react';
-import JibButton from './Button';
+import { Button } from '../app/components/ui/Button';
 import logoJB from '../public/img/Logo-wide.png';
 import { motion } from 'framer-motion';
 
@@ -84,7 +86,9 @@ const CTA: React.FC = () => {
                 viewport={{ once: true }}
                 className="mt-10"
               >
-                <JibButton text='Craft Contracts Now'/>
+                <Button variant="default" size="lg" className="bg-primary-500 text-white hover:bg-primary-600">
+                  Craft Contracts Now
+                </Button>
               </motion.div>
             </div>
           </div>
