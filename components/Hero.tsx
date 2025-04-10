@@ -35,9 +35,9 @@ export default function Hero() {
 
         // Transform API data into the format expected by your component
         const formattedStats: Stat[] = [
-          { id: 1, name: 'Today', value: transactionsToday.toLocaleString() },
-          { id: 2, name: 'Total TX', value: totalTransactions.toLocaleString() },
-          { id: 3, name: 'Wallets', value: totalAddresses.toLocaleString() },
+          { id: 1, name: t('statsToday'), value: transactionsToday.toLocaleString() },
+          { id: 2, name: t('statsTotalTx'), value: totalTransactions.toLocaleString() },
+          { id: 3, name: t('statsWallets'), value: totalAddresses.toLocaleString() },
         ];
 
         // Set the formatted stats in the component state
@@ -46,16 +46,16 @@ export default function Hero() {
         console.error('Error fetching data:', error);
         // Use fallback data if fetch fails
         const fallbackStats: Stat[] = [
-          { id: 1, name: 'Today', value: '25,431' },
-          { id: 2, name: 'Total TX', value: '3,582,921' },
-          { id: 3, name: 'Wallets', value: '192,557' },
+          { id: 1, name: t('statsToday'), value: '25,431' },
+          { id: 2, name: t('statsTotalTx'), value: '3,582,921' },
+          { id: 3, name: t('statsWallets'), value: '192,557' },
         ];
         setStats(fallbackStats);
       }
     };
 
     fetchData(); // Call the fetch function
-  }, []);
+  }, [t]);
 
   // Don't render until client-side hydration is complete
   if (!mounted) {
@@ -111,13 +111,11 @@ export default function Hero() {
             </div>
             
             <h1 className="font-display text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl lg:text-6xl">
-              Revolutionizing <span className="bg-gradient-to-r from-palette-yellow via-palette-amber to-palette-orange bg-clip-text text-transparent">E-Commerce</span> on the Blockchain
+              {t('titlePart1')} <span className="bg-gradient-to-r from-palette-yellow via-palette-amber to-palette-orange bg-clip-text text-transparent">{t('titlePart2')}</span> {t('titlePart3')}
             </h1>
             
             <p className="mt-6 text-lg leading-8 text-gray-600 max-w-2xl">
-              JB Chain is transforming digital commerce with a dedicated blockchain tailored for e-commerce. 
-              Our platform enables secure, transparent, and cost-effective shopping experiences while 
-              empowering merchants with next-generation tools.
+              {t('description')}
             </p>
             
             <div className="mt-8 flex flex-wrap gap-4">
@@ -162,10 +160,10 @@ export default function Hero() {
                   <div className="absolute -right-6 -top-6 h-16 w-16 rounded-full bg-palette-orange/10 group-hover:bg-palette-orange/20 transition-colors blur-xl"></div>
                   <div className="flex items-center mb-2">
                     <ShoppingBagIcon className="h-5 w-5 text-palette-orange mr-2" />
-                    <h3 className="text-base font-semibold text-gray-800">JB Mart</h3>
+                    <h3 className="text-base font-semibold text-gray-800">{t('featureJBMart')}</h3>
                   </div>
                   <p className="mt-1 text-xs text-gray-600">
-                    Decentralized marketplace launching soon
+                    {t('featureJBMartDesc')}
                   </p>
                 </div>
                 
@@ -173,10 +171,10 @@ export default function Hero() {
                   <div className="absolute -right-6 -top-6 h-16 w-16 rounded-full bg-palette-yellow/10 group-hover:bg-palette-yellow/20 transition-colors blur-xl"></div>
                   <div className="flex items-center mb-2">
                     <CurrencyDollarIcon className="h-5 w-5 text-palette-yellow mr-2" />
-                    <h3 className="text-base font-semibold text-gray-800">Zero Fees</h3>
+                    <h3 className="text-base font-semibold text-gray-800">{t('featureZeroFees')}</h3>
                   </div>
                   <p className="mt-1 text-xs text-gray-600">
-                    Commission-free e-commerce transactions
+                    {t('featureZeroFeesDesc')}
                   </p>
                 </div>
               </div>
