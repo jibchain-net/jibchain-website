@@ -1,12 +1,11 @@
 'use client'
 import type { NextPage } from 'next';
 import Hero from '../components/Hero';
-import States from '../components/States';
 import Validator from '../components/Validatior';
 import Footer from '../components/Footer';
-import WhyJBC from '../components/WhyJBC';
+import WhyJB from '../components/WhyJB';
 import Multichain from '../components/Multichain';
-import BuildOnJBC from '../components/BuildOnJBC';
+import BuildOnJB from '../components/BuildOnJB';
 import Ecosystem from '../components/Ecosystem';
 import Partner from '../components/Partner';
 import CTA from '../components/CTA';
@@ -16,17 +15,14 @@ const Home: NextPage = () => {
   return (
     <>
       <Hero />
-      <States />
       <Validator />
-      <WhyJBC />
+      <WhyJB />
       <Multichain />
-      <BuildOnJBC />
+      <BuildOnJB />
       <Ecosystem />
       <Partner />
       <CTA />
       <Footer />
-      
-      
     </>
   );
 };
