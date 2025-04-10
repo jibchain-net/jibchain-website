@@ -19,13 +19,20 @@ export const metadata: Metadata = {
   description: 'Welcome to JibChain',
 };
 
+// Generate static params for each locale
+export async function generateStaticParams() {
+  return ['en', 'th'].map(locale => ({ locale }));
+}
+
 export default async function Home({
-  params
+  params,
 }: {
-  params: { locale: string }
+  params: Promise<{ locale: string }>;
 }) {
-  // Set the locale for the request
-  const locale = params.locale;
+  // Handle params as a Promise in Next.js 15
+  const { locale } = await Promise.resolve(params);
+  
+  // Set the locale using the unstable API
   unstable_setRequestLocale(locale);
   
   return (

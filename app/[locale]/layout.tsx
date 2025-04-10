@@ -105,15 +105,22 @@ export const viewport: Viewport = {
   userScalable: false,
 };
 
+// Function to generate props with locale parameter
+export async function generateStaticParams() {
+  return ['en', 'th'].map(locale => ({ locale }));
+}
+
 export default async function RootLayout({
   children,
-  params
+  params,
 }: {
   children: React.ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
-  // This is the new recommended approach for Next.js 15
-  const locale = params.locale;
+  // Handle params as a Promise in Next.js 15
+  const { locale } = await Promise.resolve(params);
+  
+  // Set the locale using the unstable API
   unstable_setRequestLocale(locale);
 
   // Get messages for the current locale
