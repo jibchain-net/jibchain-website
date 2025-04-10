@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import LogoBuildOnJBC from '../public/img/build-on-jbc.png'
 import Image from 'next/image'
 import JibButton from './Button'

@@ -74,7 +74,7 @@ export default function Ecosystem() {
         </div>
         <p className="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-secondary-100 pb-12">
           The number of DApps on our platform is growing at breakneck speed, attracting users and pushing 
-          the boundaries of what's possible. Join the revolution and be part of the future.
+          the boundaries of what&apos;s possible. Join the revolution and be part of the future.
         </p>
 
         <div className="mx-auto max-w-6xl">
