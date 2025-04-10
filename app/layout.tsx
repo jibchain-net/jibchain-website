@@ -1,6 +1,6 @@
 import '../styles/globals.css';
 import '@rainbow-me/rainbowkit/styles.css';
-import { Metadata } from 'next';
+import { Metadata, Viewport } from 'next';
 import Navbar from '../components/Navbar';
 import { Plus_Jakarta_Sans, Poppins } from 'next/font/google';
 import React from 'react';
@@ -21,6 +21,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://jibchain.net'),
   title: 'The JB Community Powered, Developer Focused',
   description: 'JB Chain, an EVM-based platform, is powered by a community of developers and secured by at-home stakers globally. It offers familiar tooling and is soon introducing trustless bridges to major blockchains, ensuring a seamless and secure experience.',
   openGraph: {
@@ -52,6 +53,9 @@ export const metadata: Metadata = {
       { rel: 'mask-icon', url: '/safari-pinned-tab.svg', color: '#13254d' }
     ]
   },
+};
+
+export const viewport: Viewport = {
   themeColor: '#13254d',
 };
 
