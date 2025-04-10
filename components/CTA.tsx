@@ -8,12 +8,12 @@ import { motion } from 'framer-motion';
 
 const CTA: React.FC = () => {
   return (
-    <div className="relative py-24 sm:py-32 overflow-hidden">
+    <div className="relative py-24 sm:py-32 overflow-hidden bg-white">
       {/* Background gradient */}
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gray-900 via-gray-900 to-black overflow-hidden">
         <div className="absolute left-1/2 top-0 -z-10 -translate-x-1/2 blur-3xl xl:-top-6" aria-hidden="true">
           <div
-            className="aspect-[1155/678] w-[72.1875rem] bg-gradient-to-tr from-primary-500 to-violet-600 opacity-10"
+            className="aspect-[1155/678] w-[72.1875rem] bg-gradient-to-tr from-palette-amber to-palette-coral opacity-10"
             style={{
               clipPath:
                 'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
@@ -28,7 +28,7 @@ const CTA: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="mx-auto max-w-3xl overflow-hidden rounded-3xl bg-gray-800/50 backdrop-blur-lg border border-gray-700/50 shadow-2xl shadow-black/50"
+          className="mx-auto max-w-3xl overflow-hidden rounded-3xl bg-gradient-to-r from-white to-light-surface border border-gray-200 shadow-xl"
         >
           <div className="relative isolate overflow-hidden px-6 py-12 sm:px-12 sm:py-16">
             {/* Decorative corners */}
@@ -53,7 +53,7 @@ const CTA: React.FC = () => {
                   src={logoJB}
                   width={140}
                   height={60}
-                  alt='JB'
+                  alt='JBChain Logo'
                   className="h-16 w-auto mb-8"
                 />
               </motion.div>
@@ -63,7 +63,7 @@ const CTA: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
                 viewport={{ once: true }}
-                className="text-4xl font-bold tracking-tight text-white sm:text-5xl"
+                className="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl"
               >
                 Code the New Paradigm
               </motion.h2>
@@ -73,7 +73,7 @@ const CTA: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
                 viewport={{ once: true }}
-                className="mt-6 text-lg text-gray-300 max-w-xl"
+                className="mt-6 text-lg text-gray-600 max-w-xl"
               >
                 Architect the future of decentralized finance and tokenized economies. 
                 Our developer tools empower you to craft groundbreaking blockchain solutions.
@@ -86,7 +86,7 @@ const CTA: React.FC = () => {
                 viewport={{ once: true }}
                 className="mt-10"
               >
-                <Button variant="default" size="lg" className="bg-primary-500 text-white hover:bg-primary-600">
+                <Button variant="default" size="lg" className="bg-primary-500 text-white hover:bg-primary-600 shadow-md hover:shadow-lg transition-shadow">
                   Craft Contracts Now
                 </Button>
               </motion.div>
