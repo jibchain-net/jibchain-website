@@ -61,7 +61,7 @@ export default function BuildOnJB() {
                 width={500}
                 height={500}
                 alt='Build On JB illustration'
-                className="relative rounded-2xl shadow-xl ring-1 ring-gray-900/10"
+                className="relative"
               />
             </div>
           </motion.div>

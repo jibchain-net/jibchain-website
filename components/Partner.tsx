@@ -58,7 +58,7 @@ export default function Partner() {
   };
 
   return (
-    <div className="py-24 sm:py-32 bg-white">
+    <div className="py-24 sm:py-32 bg-gray-900">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -67,10 +67,10 @@ export default function Partner() {
           viewport={{ once: true }}
           className="mx-auto max-w-4xl text-center"
         >
-          <h2 className="mt-2 text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl">
+          <h2 className="mt-2 text-4xl font-bold tracking-tight text-white sm:text-5xl">
             Our Partners
           </h2>
-          <p className="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-gray-600 pb-12">
+          <p className="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-gray-300 pb-12">
             From established players to rising stars, our dedicated partners bring their 
             diverse strengths to the table, powering growth and building a brighter blockchain future.
           </p>

@@ -39,7 +39,7 @@ export default function Validator() {
   };
 
   return (
-    <div className="relative overflow-hidden py-24 sm:py-32 bg-light-surface validator-bg bg-cover bg-center" id="validator">
+    <div className="relative overflow-hidden py-24 sm:py-32 bg-light-surface" id="validator">
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         <motion.div 
           variants={containerVariants}
