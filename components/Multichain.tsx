@@ -1,9 +1,9 @@
-import JibCard from './JibCard'
 import { shortenEthAddress } from '../utils/helpers'
 import Image from 'next/image'
 import Link from 'next/link'
-import iconLink from '../public/img/icon/lucide_external-link.png'
-import iconCopy from '../public/img/icon/document-copy.png'
+import { motion } from 'framer-motion'
+import { DocumentDuplicateIcon, ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline'
+
 const tokens = [
   {
     chain: 'Optimism',
@@ -43,57 +43,97 @@ const tokens = [
 ]
 
 export default function Multichain() {
-  
-
   return (
-    <div className="py-24 sm:py-32">
+    <div className="relative py-24 sm:py-32 bg-gradient-to-b from-black to-gray-900">
+      {/* Background pattern */}
+      <div className="absolute inset-0 -z-10">
+        <svg className="absolute h-full w-full" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+              <path d="M0 40V0H40" fill="none" stroke="rgba(255,255,255,0.05)" strokeWidth="0.5" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#grid)" />
+        </svg>
+      </div>
+      
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-4xl text-center">
-          <p className="mt-2 text-4xl font-bold tracking-tight text-primary-300 sm:text-5xl">
-            JB on Multichain
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="mx-auto max-w-4xl text-center"
+        >
+          <h2 className="mt-2 text-4xl font-bold tracking-tight text-white sm:text-5xl">
+            <span className="bg-gradient-to-r from-primary-300 to-primary-500 bg-clip-text text-transparent">JB</span> on Multichain
+          </h2>
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-gray-300">
+            JB Token contract addresses across various blockchain networks
           </p>
-        </div>
-        <p className="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-gray-400 pb-12">
-        JB Token contract address across various chains.
-        </p>
-        <div className="mx-auto">
-          <div className="grid grid-cols-5 gap-4">
-            {tokens.map((token) => (
-              <JibCard key={token.chain}>
-                <div className="grid grid-cols-1 justify-items-center">
-                  <Image
-                    src={token.img}
-                    width={48}
-                    height={48}
-                    alt={token.chain}
-                  />
-                  <div className='text-gray-200 text-lg font-semi-bold text-center p-3'>
-                    {token.chain}
+        </motion.div>
+        
+        <motion.div 
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="mx-auto mt-16 max-w-7xl"
+        >
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-5">
+            {tokens.map((token, idx) => (
+              <motion.div
+                key={token.chain}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.1 * idx }}
+                viewport={{ once: true }}
+                className="group relative flex flex-col overflow-hidden rounded-2xl bg-gray-800/50 backdrop-blur-sm p-6 hover:bg-gray-800/70 transition-all border border-gray-700/50 hover:border-primary-500/30"
+              >
+                <div className="mb-6 flex items-center justify-center">
+                  <div className="relative h-16 w-16 rounded-full bg-gray-900/60 p-2 flex items-center justify-center ring-1 ring-white/10">
+                    <Image
+                      src={token.img}
+                      width={40}
+                      height={40}
+                      alt={token.chain}
+                      className="h-10 w-10 object-contain"
+                    />
+                    <span className="absolute -bottom-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-primary-400 text-[10px] font-bold text-gray-900">
+                      {token.id}
+                    </span>
                   </div>
-                  <span className="inline-flex bg-secondary-200 items-center gap-x-1.5 rounded-md px-2 py-1 text-xs font-medium text-secondary-100 ">
-                    {shortenEthAddress(token.address)}
-                    <Link href={token.href}>
-                      <Image
-                        src={iconCopy}
-                        width={12}
-                        height={12}
-                        alt='Copy'
-                      />
-                    </Link>
-                    <Link href={token.href}>
-                      <Image
-                        src={iconLink}
-                        width={12}
-                        height={12}
-                        alt='Link'
-                      />
-                    </Link>
-                  </span>
                 </div>
-              </JibCard>
+                
+                <h3 className="text-lg font-semibold text-white text-center">
+                  {token.chain}
+                </h3>
+                
+                <div className="mt-4 flex items-center justify-center rounded-lg bg-gray-900/50 py-2 px-3">
+                  <span className="text-sm font-medium text-gray-300">
+                    {shortenEthAddress(token.address)}
+                  </span>
+                  <div className="ml-auto flex space-x-1.5">
+                    <button 
+                      className="text-gray-400 hover:text-white transition-colors"
+                      onClick={() => navigator.clipboard.writeText(token.address)}
+                    >
+                      <DocumentDuplicateIcon className="h-4 w-4" />
+                    </button>
+                    <Link 
+                      href={token.href}
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-gray-400 hover:text-white transition-colors"
+                    >
+                      <ArrowTopRightOnSquareIcon className="h-4 w-4" />
+                    </Link>
+                  </div>
+                </div>
+              </motion.div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   )

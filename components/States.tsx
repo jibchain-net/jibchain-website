@@ -14,7 +14,7 @@ export default function States() {
     // Fetch data from the API endpoint
     const fetchData = async () => {
       try {
-        const response = await axios.get('https://exp-l1-ng.jibchain.net/api/v2/stats');
+        const response = await axios.get('https://exp.jibchain.net/api/v2/stats');
         const apiStats = response.data;
 
         // Convert certain string properties to numbers
