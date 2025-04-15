@@ -52,7 +52,14 @@ export default async function Home({
             </>
           }
         >
-        +
+          <Image
+            src='/img/jbmart-screenshort.png'
+            alt="hero"
+            height={1078}
+            width={1142}
+            className="mx-auto rounded-2xl object-cover h-full object-left-top"
+            draggable={false}
+          />
         </ContainerScroll>
         
         <Validator />
