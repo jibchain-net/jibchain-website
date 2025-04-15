@@ -1,9 +1,8 @@
-import { createSharedPathnamesNavigation } from 'next-intl/navigation';
 import { getRequestConfig } from 'next-intl/server';
-import { locales } from './app/i18n-config';
 
-// Simpler implementation for next-intl 3.26.5
-export default getRequestConfig(async ({ locale }) => {
+// Updated implementation for next-intl 3.26.5 using requestLocale
+export default getRequestConfig(async ({ requestLocale }) => {
+  const locale = await requestLocale;
   return {
     messages: (await import(`./messages/${locale}.json`)).default,
     // We explicitly return locale to satisfy the current API requirements
@@ -12,5 +11,6 @@ export default getRequestConfig(async ({ locale }) => {
   };
 });
 
-// Export createSharedPathnamesNavigation for reuse in the app
-export const { Link, redirect, usePathname, useRouter } = createSharedPathnamesNavigation({ locales }); 
+// Export the navigation configuration
+export const localePrefix = 'as-needed';
+export const defaultLocale = 'en'; 
