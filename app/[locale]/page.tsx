@@ -41,7 +41,8 @@ export default async function Home({
       <Suspense fallback={<div className="min-h-screen flex items-center justify-center bg-gray-900 text-white">Loading...</div>}>
         <Hero />
         <JBMart />
-              <ContainerScroll
+        
+        <ContainerScroll
         titleComponent={
           <>
             <h1 className="text-4xl font-semibold text-black dark:text-white">
@@ -54,14 +55,15 @@ export default async function Home({
         }
       >
         <Image
-          src='/img/jbmart-screenshort.jpg'
+          src='/img/jbmart-screenshort.png'
           alt="hero"
-          height={720}
-          width={1400}
+          height={1078}
+          width={1142}
           className="mx-auto rounded-2xl object-cover h-full object-left-top"
           draggable={false}
         />
-      </ContainerScroll>
+        </ContainerScroll>
+        
         <Validator />
         <WhyJB />
         <Multichain />
