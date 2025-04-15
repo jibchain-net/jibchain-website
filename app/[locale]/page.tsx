@@ -43,25 +43,16 @@ export default async function Home({
         <JBMart />
         
         <ContainerScroll
-        titleComponent={
-          <>
-            <h1 className="text-4xl font-semibold text-black dark:text-white">
-              E-Commerce on chain <br />
-              <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none">
-                Revolutionizing
-              </span>
-            </h1>
-          </>
-        }
-      >
-        <Image
-          src='/img/jbmart-screenshort.png'
-          alt="hero"
-          height={1078}
-          width={1142}
-          className="mx-auto rounded-2xl object-cover h-full object-left-top"
-          draggable={false}
-        />
+          titleComponent={
+            <>
+              <h1 className="text-4xl font-semibold text-black dark:text-white">
+                E-Commerce on chain <br />
+                <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none">Revolutionizing</span>
+              </h1>
+            </>
+          }
+        >
+        +
         </ContainerScroll>
         
         <Validator />
