@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
 import { Metadata } from 'next';
 import { unstable_setRequestLocale } from 'next-intl/server';
-
+import Image from 'next/image';
 // Direct imports for page sections
 import Hero from '../../components/Hero';
 import JBMart from '../../components/JBMart';
@@ -13,7 +13,7 @@ import Ecosystem from '../../components/Ecosystem';
 import Partner from '../../components/Partner';
 import CTA from '../../components/CTA';
 import Footer from '../../components/Footer';
-
+import { ContainerScroll } from '../../components/ContainerScroll';
 export const metadata: Metadata = {
   title: 'JibChain',
   description: 'Welcome to JibChain',
@@ -41,6 +41,27 @@ export default async function Home({
       <Suspense fallback={<div className="min-h-screen flex items-center justify-center bg-gray-900 text-white">Loading...</div>}>
         <Hero />
         <JBMart />
+              <ContainerScroll
+        titleComponent={
+          <>
+            <h1 className="text-4xl font-semibold text-black dark:text-white">
+              E-Commerce on chain <br />
+              <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none">
+                Revolutionizing
+              </span>
+            </h1>
+          </>
+        }
+      >
+        <Image
+          src='/img/jbmart-screenshort.jpg'
+          alt="hero"
+          height={720}
+          width={1400}
+          className="mx-auto rounded-2xl object-cover h-full object-left-top"
+          draggable={false}
+        />
+      </ContainerScroll>
         <Validator />
         <WhyJB />
         <Multichain />
